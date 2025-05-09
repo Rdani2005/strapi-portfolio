@@ -1,0 +1,12 @@
+{
+  "name": "@devtools/esbuild",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "main": "src/index.mjs",
+  "types": "src/index.d.ts",
+  "devDependencies": {
+    "esbuild": "^0.25.4"
+  }
+}

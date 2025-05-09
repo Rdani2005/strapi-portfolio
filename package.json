@@ -1,8 +1,36 @@
 {
-  "name": "strapi-portfolio",
+  "name": "@strapi-portfolio",
   "version": "0.0.1SNAPSHOT",
   "description": "",
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint --max-warnings 0 \"**/*.{js,cjs,mjs,jsx,ts,tsx}\"",
+    "prepare": "husky",
+    "pre-commit": "lint-staged"
+  },
+  "dependencies": {
+    "eslint": "^9.26.0",
+    "prettier": "^3.5.3"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2"
+  },
+  "workspaces": [
+    "apps/*",
+    "devtools/*",
+    "packages/*"
+  ],
+  "lint-staged": {
+    "*.{js,cjs,mjs,ts,jsx,tsx}": [
+      "prettier --write",
+      "eslint --max-warnings 0"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
+  }
 }
