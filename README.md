@@ -53,4 +53,4 @@ The packages inside `packages/` are internal by default, but can be configured f
 
 ## 📄 License
 
-MIT
+[MIT](LICENSE) © [Rdani2005](https://rdani2005.com)
