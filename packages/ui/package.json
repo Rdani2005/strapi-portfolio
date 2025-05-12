@@ -11,12 +11,14 @@
     "./css": "./src/css/index.ts",
     "./system/tailwind/main.css": "./src/system/tailwind/main.css",
     "./utilities": "./src/utilities/index.ts",
+    "./layout": "./src/layout/index.ts",
     "./package.json": "./package.json"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-dialog": "^1.1.13",
     "@radix-ui/react-label": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.6",
     "@radix-ui/react-slot": "^1.2.2",
     "@radix-ui/react-tabs": "^1.1.11",
     "@strapi-portfolio/core": "workspace:*",

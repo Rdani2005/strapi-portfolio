@@ -5,5 +5,6 @@ export * from "./forms";
 export * from "./input";
 export * from "./label";
 export * from "./sheet";
+export * from "./slot";
 export * from "./tabs";
 export * from "./textarea";
