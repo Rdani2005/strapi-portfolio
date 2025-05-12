@@ -9,7 +9,8 @@
     "format": "prettier --write .",
     "lint": "eslint --max-warnings 0 \"**/*.{js,cjs,mjs,jsx,ts,tsx}\"",
     "prepare": "husky",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "dev": "pnpm run --filter @strapi-portfolio/web dev"
   },
   "dependencies": {
     "eslint": "^9.26.0",

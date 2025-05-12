@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@strapi-portfolio/ui/system/tailwind/main.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
