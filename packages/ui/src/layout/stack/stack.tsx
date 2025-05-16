@@ -10,7 +10,7 @@ import { Separator } from "../separator";
 import { css, extractVariantsFromProps, VariantProps } from "../../css";
 import { isNil } from "@strapi-portfolio/core";
 
-const $Stack = css({
+export const $Stack = css({
   base: "flex flex-col",
   variants: {
     space,

@@ -1,3 +1,9 @@
+import { Hero } from "@strapi-portfolio/web/home";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }

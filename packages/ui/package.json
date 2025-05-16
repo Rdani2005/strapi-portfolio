@@ -9,8 +9,10 @@
   "exports": {
     ".": "./src/index.ts",
     "./css": "./src/css/index.ts",
-    "./system/tailwind/main.css": "./src/system/tailwind/main.css",
+    "./icons": "./src/icons/index.ts",
+    "./main.css": "./src/main.css",
     "./utilities": "./src/utilities/index.ts",
+    "./postcss.config": "./postcss.config.mjs",
     "./layout": "./src/layout/index.ts",
     "./package.json": "./package.json"
   },
@@ -22,10 +24,12 @@
     "@radix-ui/react-slot": "^1.2.2",
     "@radix-ui/react-tabs": "^1.1.11",
     "@strapi-portfolio/core": "workspace:*",
+    "@tailwindcss/postcss": "^4",
     "cmdk": "^1.1.1",
     "lucide-react": "^0.510.0",
     "react": "^19.1.0",
     "react-hook-form": "^7.56.3",
+    "react-icons": "^5.5.0",
     "tailwind-merge": "^3.2.0",
     "tailwind-variants": "^1.0.0"
   },

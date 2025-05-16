@@ -3,3 +3,18 @@ pnpm-lock.yaml
 package-lock.json
 yarn.lock
 
+apps/web/.next
+apps/web/out
+
+.DS_Store
+node_modules
+pnpm-lock.yaml
+
+*.log
+*.lock
+
+# Producción o artefactos
+dist
+build
+coverage
+

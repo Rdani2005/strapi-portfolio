@@ -10,7 +10,7 @@ import { css, extractVariantsFromProps, VariantProps } from "../../css";
 import { $Hidden, extractHiddenPropsFromChild } from "../hidden";
 import { isNil } from "@strapi-portfolio/core";
 
-const $Inline = css({
+export const $Inline = css({
   base: "flex flex-row",
   variants: {
     space,

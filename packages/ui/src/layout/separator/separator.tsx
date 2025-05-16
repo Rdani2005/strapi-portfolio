@@ -1,10 +1,11 @@
+"use client";
 import {
   forwardRef,
   type ElementRef,
   type ComponentPropsWithoutRef,
 } from "react";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
-import { css, VariantProps } from "../../css";
+import { css, extractVariantsFromProps, VariantProps } from "../../css";
 
 const $Separator = css({
   base: "bg-accent-border shrink-0",

@@ -2,7 +2,16 @@ import unjs from "eslint-config-unjs";
 import * as Configs from "./configs.mjs";
 
 export default unjs(
-  { ignores: ["**/build", "**/dist", "**/node_modules", "**/public"] },
+  {
+    ignores: [
+      "**/build",
+      "**/dist",
+      "**/node_modules",
+      "**/public",
+      "**/.next",
+      "**/out",
+    ],
+  },
   Configs.React,
   Configs.ReactHooks,
   Configs.JsxA11y,

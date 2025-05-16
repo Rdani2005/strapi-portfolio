@@ -4,6 +4,7 @@ export * from "./card";
 export * from "./forms";
 export * from "./input";
 export * from "./label";
+export * from "./logo";
 export * from "./sheet";
 export * from "./slot";
 export * from "./tabs";
