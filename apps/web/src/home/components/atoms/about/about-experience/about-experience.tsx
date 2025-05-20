@@ -3,7 +3,7 @@ import {
   toQualificationInformationKey,
   type Qualification,
 } from "@strapi-portfolio/web/home/models";
-import { AboutExperienceItem } from "../../atoms";
+import { AboutExperienceItem } from "../about-experience-item";
 
 type AboutExperienceProps = {
   qualification?: Qualification;

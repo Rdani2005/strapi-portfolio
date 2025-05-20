@@ -1,1 +1,2 @@
-export * from "./about-info.model";
+export * from "./about";
+export * from "./services";
