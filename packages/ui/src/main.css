@@ -5,10 +5,10 @@
 
 @theme {
   --breakpoint-*: initial;
-  --breakpoint-tablet: 768px;
-  --breakpoint-laptop: 1024px;
-  --breakpoint-desktop: 1280px;
-  --breakpoint-wide: 1536px;
+  --breakpoint-tablet: 640px;
+  --breakpoint-laptop: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1400px;
 }
 
 @layer utilities {
@@ -18,11 +18,20 @@
   .bg-hero_shape {
     background-image: url("/hero/shape-1.svg");
   }
-  .bg-hero_shape2_light {
+  .bg-hero_shape2 {
     background-image: url("/hero/shape-2-light.svg");
   }
-  .bg-hero_shape2_dark {
+  .dark .bg-hero_shape2 {
     background-image: url("/hero/shape-2-dark.svg");
+  }
+  .bg-dots_light {
+    background-image: url("/dots-light.svg");
+  }
+  .bg-about_shape {
+    background-image: url("/about/shape-light.svg");
+  }
+  .dark .bg-about_shape {
+    background-image: url("/about/shape-dark.svg");
   }
 }
 
@@ -155,7 +164,31 @@
     @apply laptop:text-[72px] laptop:leading-[80px] text-6xl font-bold tracking-[-2px];
   }
 
+  .h2 {
+    @apply text-4xl font-bold;
+  }
+
+  .h3 {
+    @apply text-3xl font-bold;
+  }
+
+  .h4 {
+    @apply text-[22px] font-semibold;
+  }
+
   .subtitle {
     @apply text-muted-foreground mb-8 text-lg font-light;
   }
+
+  .section-title {
+    @apply relative flex w-max items-center justify-between gap-3 text-4xl font-bold before:h-[24px] before:w-[24px] before:bg-center before:bg-no-repeat;
+  }
+}
+
+.section-title::before {
+  background-image: url("/dots-light.svg");
+}
+
+html.dark .section-title::before {
+  background-image: url("/dots-dark.svg");
 }

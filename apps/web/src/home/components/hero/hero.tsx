@@ -8,8 +8,8 @@ import {
   RiArrowDownSLine,
   RiTeamFill,
 } from "@strapi-portfolio/ui/icons";
+import { Socials } from "@strapi-portfolio/web/components";
 
-import { Socials } from "@strapi-portfolio/web/components/socials";
 import { DevImg } from "../dev-img";
 import { Badge } from "../badge";
 
@@ -72,7 +72,7 @@ export const Hero = () => {
               endCountText="+"
               badgeText="Happy Clients"
             />
-            <div className="bg-hero_shape2_light dark:bg-hero_shape2_dark absolute -right-2 -top-1 h-[500px] w-[500px] bg-no-repeat" />
+            <div className="bg-hero_shape2  absolute -right-2 -top-1 h-[500px] w-[500px] bg-no-repeat" />
             <DevImg
               containerStyles="bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom"
               imgSrc="/hero/developer.png"
