@@ -1,11 +1,10 @@
 import { Inline, TabsContent } from "@strapi-portfolio/ui";
 import {
   filterByTitle,
-  type Skill,
-  type Skills,
+  Skills,
   toSkillKey,
-} from "../../models";
-import Image from "next/image";
+} from "@strapi-portfolio/web/home/models";
+import { SkillImage, SkillItem } from "../../atoms";
 
 const skillsData: Skills[] = [
   {
@@ -51,14 +50,6 @@ const skillsData: Skills[] = [
   },
 ];
 
-function SkillItem({ skill }: { skill: Skill }) {
-  return (
-    <div className="desktop:text-left desktop:mx-0 mx-auto w-2/4 text-center">
-      <div className="font-medium">{skill.name}</div>
-    </div>
-  );
-}
-
 export function AboutSkills() {
   return (
     <TabsContent value="skills">
@@ -87,13 +78,7 @@ export function AboutSkills() {
             wrap
           >
             {filterByTitle<Skills>(skillsData, "tools")?.data.map((item) => (
-              <Image
-                src={item.imgPath ?? ""}
-                width={48}
-                height={48}
-                alt={item.name}
-                key={toSkillKey(item)}
-              />
+              <SkillImage skill={item} key={toSkillKey(item)} />
             ))}
           </Inline>
         </div>

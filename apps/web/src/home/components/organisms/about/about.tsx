@@ -1,9 +1,11 @@
 import { Tabs } from "@strapi-portfolio/ui";
-import { DevImg } from "../dev-img";
-import { AboutTabs } from "../about-tabs";
-import { AboutSkills } from "../about-skills";
-import { AboutInformation } from "../about-information";
-import { AboutQualifications } from "../about-qualifications";
+import { DevImg } from "../../atoms";
+import {
+  AboutInformation,
+  AboutQualifications,
+  AboutSkills,
+  AboutTabs,
+} from "../../molecules";
 
 export function About() {
   return (

@@ -9,9 +9,7 @@ import {
   RiTeamFill,
 } from "@strapi-portfolio/ui/icons";
 import { Socials } from "@strapi-portfolio/web/components";
-
-import { DevImg } from "../dev-img";
-import { Badge } from "../badge";
+import { Badge, DevImg } from "../../atoms";
 
 export const Hero = () => {
   return (

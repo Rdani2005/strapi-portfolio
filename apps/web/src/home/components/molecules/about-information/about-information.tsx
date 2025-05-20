@@ -1,5 +1,4 @@
 import { Stack, TabsContent } from "@strapi-portfolio/ui";
-import { type AboutInfo } from "../../models";
 import {
   CalendarIcon,
   GraduationCapIcon,
@@ -8,6 +7,8 @@ import {
   PhoneCallIcon,
   User2Icon,
 } from "@strapi-portfolio/ui/icons";
+import { type AboutInfo } from "@strapi-portfolio/web/home/models";
+import { AboutInfoItem } from "../../atoms";
 
 const infoData: AboutInfo[] = [
   {
@@ -47,13 +48,7 @@ export function AboutInformation() {
         </p>
         <div className="desktop:grid-cols-2 mb-12 grid gap-4">
           {infoData.map((item) => (
-            <div
-              key={item.text}
-              className="desktop:mx-0 mx-auto flex items-center gap-4"
-            >
-              <div className="text-primary">{item.icon}</div>
-              <div>{item.text}</div>
-            </div>
+            <AboutInfoItem item={item} key={item.text} />
           ))}
         </div>
 
