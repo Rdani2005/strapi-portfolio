@@ -1,5 +1,5 @@
 import { TabsList } from "@strapi-portfolio/ui";
-import { AboutTrigger } from "../../atoms";
+import { AboutTrigger } from "../../../atoms";
 
 export function AboutTabs() {
   return (

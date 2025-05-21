@@ -8,7 +8,7 @@ import {
   User2Icon,
 } from "@strapi-portfolio/ui/icons";
 import { type AboutInfo } from "@strapi-portfolio/web/home/models";
-import { AboutInfoItem } from "../../atoms";
+import { AboutInfoItem } from "../../../atoms";
 
 const infoData: AboutInfo[] = [
   {

@@ -4,7 +4,7 @@ import {
   Skills,
   toSkillKey,
 } from "@strapi-portfolio/web/home/models";
-import { SkillImage, SkillItem } from "../../atoms";
+import { SkillImage, SkillItem } from "../../../atoms";
 
 const skillsData: Skills[] = [
   {

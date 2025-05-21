@@ -4,7 +4,7 @@ import {
   filterByTitle,
   type Qualification,
 } from "@strapi-portfolio/web/home/models";
-import { AboutQualificationItem } from "../../atoms";
+import { AboutQualificationItem } from "../../../atoms";
 
 const qualificationData: Qualification[] = [
   {
