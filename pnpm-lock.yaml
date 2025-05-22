@@ -147,6 +147,9 @@ importers:
       fast-check:
         specifier: ^4.1.1
         version: 4.1.1
+      typescript:
+        specifier: ^5
+        version: 5.8.3
       uid:
         specifier: ^2.0.2
         version: 2.0.2

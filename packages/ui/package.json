@@ -16,6 +16,10 @@
     "./layout": "./src/layout/index.ts",
     "./package.json": "./package.json"
   },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest --passWithNoTests"
+  },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-dialog": "^1.1.13",

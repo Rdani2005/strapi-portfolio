@@ -10,7 +10,8 @@
     "lint": "eslint --max-warnings 0 \"**/*.{js,cjs,mjs,jsx,ts,tsx}\"",
     "prepare": "husky",
     "pre-commit": "lint-staged",
-    "dev": "pnpm run --filter @strapi-portfolio/web dev"
+    "dev": "pnpm run --filter @strapi-portfolio/web dev",
+    "typecheck": "pnpm run --recursive typecheck"
   },
   "dependencies": {
     "eslint": "^9.26.0",
