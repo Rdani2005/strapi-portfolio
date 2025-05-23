@@ -1,3 +1,4 @@
 export * from "./about";
-export * from "./services";
 export * from "./hero";
+export * from "./services";
+export * from "./work";

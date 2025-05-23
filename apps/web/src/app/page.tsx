@@ -1,4 +1,4 @@
-import { About, Hero, Services } from "@strapi-portfolio/web/home";
+import { About, Hero, Services, Work } from "@strapi-portfolio/web/home";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <Work />
     </main>
   );
 }

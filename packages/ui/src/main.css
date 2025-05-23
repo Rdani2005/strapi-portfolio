@@ -33,6 +33,18 @@
   .dark .bg-about_shape {
     background-image: url("/about/shape-dark.svg");
   }
+  .bg-work_project {
+    background-image: url("/work/project-bg-light.png");
+  }
+  .dark .bg-work_project {
+    background-image: url("/work/project-bg-dark.png");
+  }
+}
+
+@media (min-width: 1400px) {
+  .wide\:bg-work_project {
+    background-image: url("/work/project-bg-light.png");
+  }
 }
 
 :root {
@@ -191,4 +203,10 @@
 
 html.dark .section-title::before {
   background-image: url("/dots-dark.svg");
+}
+
+.swiper-horizontal > .section-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  @apply bg-primary;
 }

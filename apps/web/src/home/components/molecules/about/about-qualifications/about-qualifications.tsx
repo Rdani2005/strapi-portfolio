@@ -57,7 +57,7 @@ export function AboutQualifications() {
   return (
     <TabsContent value="qualification">
       <div className="">
-        <h3 className="h3 desktop:text-left mb-8 text-center">
+        <h3 className="h3 wide:text-left mb-8 text-center">
           My Awesome Journey
         </h3>
 

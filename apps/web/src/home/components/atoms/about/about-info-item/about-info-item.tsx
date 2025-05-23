@@ -6,7 +6,7 @@ type AboutInfoItemProps = {
 };
 export function AboutInfoItem({ item }: AboutInfoItemProps) {
   return (
-    <Inline className="desktop:mx-0 mx-auto" space="4">
+    <Inline className="wide:mx-0 mx-auto" space="4">
       <div className="text-primary">{item.icon}</div>
       <div>{item.text}</div>
     </Inline>

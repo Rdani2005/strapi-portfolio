@@ -53,8 +53,8 @@ const skillsData: Skills[] = [
 export function AboutSkills() {
   return (
     <TabsContent value="skills">
-      <div className="desktop:text-left text-center">
-        <h3 className="h3 desktop:text-left mb-8 text-center">
+      <div className="wide:text-left text-center">
+        <h3 className="h3 wide:text-left mb-8 text-center">
           Tools I use Every Day
         </h3>
         <div className="mb-16">
@@ -67,14 +67,12 @@ export function AboutSkills() {
           </div>
         </div>
         <div>
-          <h4 className="desktop:text-left mb-2 text-xl font-semibold">
-            Tools
-          </h4>
+          <h4 className="wide:text-left mb-2 text-xl font-semibold">Tools</h4>
           <div className="border-border mb-4 border-b"></div>
           <Inline
             alignX="center"
             space="4"
-            className="desktop:justify-start w-full"
+            className="wide:justify-start w-full"
             wrap
           >
             {filterByTitle<Skills>(skillsData, "tools")?.data.map((item) => (

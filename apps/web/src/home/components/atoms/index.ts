@@ -1,4 +1,4 @@
 export * from "./about";
-export * from "./badge";
-export * from "./dev-img";
 export * from "./services";
+export * from "./shared";
+export * from "./work";

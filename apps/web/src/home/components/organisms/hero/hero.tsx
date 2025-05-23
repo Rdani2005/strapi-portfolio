@@ -13,10 +13,10 @@ import { Badge, DevImg } from "../../atoms";
 
 export const Hero = () => {
   return (
-    <section className="laptop:py-24 laptop:pt-28 bg-hero h-[84vh] bg-cover bg-bottom bg-no-repeat px-4 py-12 dark:bg-none">
+    <section className="wide:py-24 wide:pt-28 bg-hero h-[84vh] bg-cover bg-bottom bg-no-repeat px-4 py-12 dark:bg-none">
       <div className="container mx-auto">
         <Inline alignX="between" space="8">
-          <Stack className="desktop:mx-0 desktop:text-left mx-auto max-w-[600px] justify-center text-center">
+          <Stack className="wide:mx-0 wide:text-left mx-auto max-w-[600px] justify-center text-center">
             <div className="text-primary mb-4 text-sm font-semibold uppercase tracking-[4px]">
               Web Developer
             </div>
@@ -26,7 +26,7 @@ export const Hero = () => {
               and what I engage in professionally
             </p>
 
-            <div className="tablet:flex-row desktop:mx-0 mx-auto mb-12 flex flex-col gap-3">
+            <div className="tablet:flex-row wide:mx-0 mx-auto mb-12 flex flex-col gap-3">
               <Button className="gap-x-2" asChild>
                 <Link href={"/contact"}>
                   Contact Me <SendIcon size={18} />
@@ -42,13 +42,13 @@ export const Hero = () => {
             <Socials
               containerStyles={$Inline({
                 space: "6",
-                className: "mx-auto desktop:mx-0",
+                className: "mx-auto wide:mx-0",
               })}
               iconsStyles="text-foreground text-[22px] hover:text-primary transition-all"
             />
           </Stack>
 
-          <div className="desktop:flex relative hidden">
+          <div className="wide:flex relative hidden">
             <Badge
               containerStyles="absolute top-[24%] -left-[5rem]"
               icon={<RiBriefcase4Fill />}
@@ -67,7 +67,7 @@ export const Hero = () => {
               containerStyles="absolute top-[55%] -right-8"
               icon={<RiTeamFill />}
               endCountNumber={7}
-              endCountText="+"
+              endCountText="k"
               badgeText="Happy Clients"
             />
             <div className="bg-hero_shape2  absolute -right-2 -top-1 h-[500px] w-[500px] bg-no-repeat" />
