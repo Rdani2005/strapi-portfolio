@@ -13,7 +13,7 @@ import { Badge, DevImg } from "../../atoms";
 
 export const Hero = () => {
   return (
-    <section className="wide:py-24 wide:pt-28 bg-hero h-[84vh] bg-cover bg-bottom bg-no-repeat px-4 py-12 dark:bg-none">
+    <section className="wide:py-24 wide:pt-28 bg-hero wide:px-0 h-[84vh] bg-cover bg-bottom bg-no-repeat px-4 py-12 dark:bg-none">
       <div className="container mx-auto">
         <Inline alignX="between" space="8">
           <Stack className="wide:mx-0 wide:text-left mx-auto max-w-[600px] justify-center text-center">

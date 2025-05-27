@@ -29,7 +29,7 @@ const servicesData: Service[] = [
 
 export function Services() {
   return (
-    <section className="desktop:mb-36 mb-12 px-4">
+    <section className="desktop:mb-36 wide:px-0 mb-12 px-4">
       <div className="container mx-auto">
         <h2 className="section-title desktop:mb-24 mx-auto mb-12 text-center">
           My Services
