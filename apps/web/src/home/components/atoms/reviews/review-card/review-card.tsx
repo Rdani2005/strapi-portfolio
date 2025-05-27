@@ -3,8 +3,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Column,
   Inline,
+  Stack,
 } from "@strapi-portfolio/ui";
 import { type Review } from "@strapi-portfolio/web/home/models";
 import Image from "next/image";
@@ -26,10 +26,10 @@ export function ReviewCard({ review }: ReviewCardProps) {
             className="rounded-full"
             priority
           />
-          <Column>
+          <Stack>
             <CardTitle>{review.name}</CardTitle>
             <p>{review.jobTitle}</p>
-          </Column>
+          </Stack>
         </Inline>
       </CardHeader>
       <CardDescription className="text-muted-foreground text-lg">

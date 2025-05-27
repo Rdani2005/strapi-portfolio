@@ -1,5 +1,6 @@
 import {
   About,
+  Cta,
   Hero,
   Reviews,
   Services,
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <Work />
       <Reviews />
+      <Cta />
     </main>
   );
 }

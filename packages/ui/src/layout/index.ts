@@ -1,5 +1,6 @@
 export * from "./center";
 export * from "./columns";
+export * from "./container";
 export * from "./content-block";
 export * from "./hidden";
 export * from "./hidden";
