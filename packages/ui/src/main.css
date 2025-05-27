@@ -39,6 +39,13 @@
   .dark .bg-work_project {
     background-image: url("/work/project-bg-dark.png");
   }
+  .bg-contact_illustration {
+    background-image: url("/contact/illustration-light.svg");
+  }
+  .dark .bg-contact_illustration {
+    background-image: url("/contact/illustration-dark.svg");
+  }
+
   .scrollbar-hidden {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE 10+ */
