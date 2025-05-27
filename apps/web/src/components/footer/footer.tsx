@@ -11,9 +11,9 @@ export function Footer() {
               space: "6",
               className: "mx-auto wide:mx-0 mb-4",
             })}
-            iconsStyles="text-primary dark:text-white/70 text-[20px]"
+            iconsStyles="text-primary dark:text-white/70 text-[20px] hover:text-white dark:hover:text-primary duration-300"
           />
-          <div className="text-muted-foreground">
+          <div className="text-muted-foreground text-center">
             Copyright &copy; Danny Sequeira. All rights reserved.
           </div>
         </Stack>
