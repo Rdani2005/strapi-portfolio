@@ -4,7 +4,7 @@ import { UnionTypeFromArray } from "@strapi-portfolio/core";
  * Names of the available breakpoints.
  * @see {@link Breakpoint}
  */
-export const BreakpointNames = ["tablet", "laptop", "desktop"] as const;
+export const BreakpointNames = ["tablet", "laptop", "desktop", "wide"] as const;
 
 /**
  * Breakpoint that targets a specific device based on its width, used for responsive design.
@@ -19,6 +19,7 @@ export const Breakpoint = {
   tablet: "tablet",
   laptop: "laptop",
   desktop: "desktop",
+  wide: "wide",
 } as const;
 
 /**

@@ -1,3 +1,4 @@
+import { Container } from "@strapi-portfolio/ui/layout";
 import { CurrentProjects } from "@strapi-portfolio/web/projects/components";
 import {
   type ProjectCategory,
@@ -88,7 +89,7 @@ const uniqueCategories: ProjectCategory[] = [
 export default function ProjectsPage() {
   return (
     <section className="min-h-screen pt-12">
-      <div className="container mx-auto">
+      <Container>
         <h2 className="section-title wide:mb-16 mx-auto mb-8 text-center">
           My Projects
         </h2>
@@ -96,7 +97,7 @@ export default function ProjectsPage() {
           currentCategories={uniqueCategories}
           projects={projectsData}
         />
-      </div>
+      </Container>
     </section>
   );
 }

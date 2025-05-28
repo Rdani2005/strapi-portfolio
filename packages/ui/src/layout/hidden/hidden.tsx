@@ -13,16 +13,19 @@ export const $Hidden = css({
       tablet: "tablet:hidden",
       laptop: "laptop:hidden",
       desktop: "desktop:hidden",
+      wide: "wide:hidden",
     } satisfies Record<Breakpoint, string>,
     belowFlex: {
       tablet: "tablet:flex hidden",
       laptop: "laptop:flex hidden",
       desktop: "desktop:flex hidden",
+      wide: "wide:flex hidden",
     } satisfies Record<Breakpoint, string>,
     below: {
       tablet: "tablet:block hidden",
       laptop: "laptop:block hidden",
       desktop: "desktop:block hidden",
+      wide: "wide:block hidden",
     } satisfies Record<Breakpoint, string>,
   },
 });

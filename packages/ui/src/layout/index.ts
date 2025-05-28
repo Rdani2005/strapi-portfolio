@@ -2,6 +2,7 @@ export * from "./center";
 export * from "./columns";
 export * from "./container";
 export * from "./content-block";
+export * from "./grid";
 export * from "./hidden";
 export * from "./hidden";
 export * from "./inline";

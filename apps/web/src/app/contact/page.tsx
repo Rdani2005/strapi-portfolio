@@ -1,11 +1,11 @@
-import { Inline, Stack } from "@strapi-portfolio/ui";
+import { Container, Inline, Stack } from "@strapi-portfolio/ui";
 import { HomeIcon, MailIcon, PhoneCallIcon } from "@strapi-portfolio/ui/icons";
 import { ContactForm } from "@strapi-portfolio/web/contact";
 
 export default function ContactPage() {
   return (
     <section>
-      <div className="container mx-auto">
+      <Container>
         <div className="wide:grid-cols-2 wide:h-[480px] mb-6 grid pt-12">
           <Stack className="justify-center">
             <Inline
@@ -45,7 +45,7 @@ export default function ContactPage() {
           </Stack>
           <ContactForm />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
