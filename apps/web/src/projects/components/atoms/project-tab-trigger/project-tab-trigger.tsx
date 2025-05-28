@@ -12,7 +12,6 @@ export function ProjectTabTrigger({
 }: ProjectTabTriggerProps) {
   return (
     <TabsTrigger
-      key={category}
       value={category}
       onClick={onClick}
       className="tablet:w-auto w-[162px] capitalize"
