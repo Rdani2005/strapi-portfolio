@@ -18,3 +18,5 @@ dist
 build
 coverage
 
+# strapi
+apps/api/*

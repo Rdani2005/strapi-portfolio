@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint --max-warnings 0 \"**/*.{js,cjs,mjs,jsx,ts,tsx}\"",
+    "lint": "eslint --no-warn-ignored --max-warnings 0 \"**/*.{js,cjs,mjs,jsx,ts,tsx}\"",
     "prepare": "husky",
     "pre-commit": "lint-staged",
     "dev": "pnpm run --filter @strapi-portfolio/web dev",
@@ -17,7 +17,8 @@
   },
   "dependencies": {
     "eslint": "^9.26.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   },
   "devDependencies": {
     "husky": "^9.1.7",
@@ -31,7 +32,7 @@
   "lint-staged": {
     "*.{js,cjs,mjs,ts,jsx,tsx}": [
       "prettier --write",
-      "eslint --max-warnings 0"
+      "eslint --no-warn-ignored --max-warnings 0"
     ],
     "*.{json,md,css}": [
       "prettier --write"
