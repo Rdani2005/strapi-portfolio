@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
 import { css, extractVariantsFromProps, VariantProps } from "../../css";
 import { space } from "../variants";
 
-const $Grid = css({
+export const $Grid = css({
   base: "grid w-full",
   variants: {
     columns: {
@@ -46,8 +46,18 @@ export type GridProps = VariantProps<typeof $Grid> &
  * Centers content vertically and horizontally within itself.
  */
 export const Grid = forwardRef<ElementRef<"div">, GridProps>((props, ref) => {
-  const [variants, centerProps] = extractVariantsFromProps($Grid, props);
-  return <div {...centerProps} ref={ref} className={$Grid(variants)} />;
+  const [variants, gridProps] = extractVariantsFromProps($Grid, props);
+  const className = gridProps.className;
+  return (
+    <div
+      {...gridProps}
+      ref={ref}
+      className={$Grid({
+        ...variants,
+        className,
+      })}
+    />
+  );
 });
 
 Grid.displayName = "Grid";

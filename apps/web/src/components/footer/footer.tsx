@@ -17,7 +17,6 @@ export function Footer() {
             Copyright &copy; Danny Sequeira. All rights reserved.
           </div>
         </Stack>
-        <div></div>
       </div>
     </footer>
   );
