@@ -10,6 +10,7 @@ export default unjs(
       "**/public",
       "**/.next",
       "**/out",
+      "**/apps/api",
     ],
   },
   Configs.React,
