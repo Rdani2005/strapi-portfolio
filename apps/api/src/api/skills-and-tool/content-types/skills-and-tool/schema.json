@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "skills_and_tools",
+  "info": {
+    "singularName": "skills-and-tool",
+    "pluralName": "skills-and-tools",
+    "displayName": "skills and tool"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill.skill"
+    },
+    "tools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tool.tool"
+    },
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    }
+  }
+}
