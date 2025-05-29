@@ -3,11 +3,7 @@ import { Outfit } from "next/font/google";
 
 import "../styles.css";
 import { ThemeProvider } from "@strapi-portfolio/web/settings";
-import {
-  Footer,
-  Header,
-  LanguageSwitcher,
-} from "@strapi-portfolio/web/components";
+import { Footer, Header } from "@strapi-portfolio/web/components";
 import { PropsWithChildren } from "react";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@strapi-portfolio/web/i18n/routing";
@@ -35,7 +31,6 @@ export default async function RootLayout({ children, params }: Props) {
       <body className={`${outfit.className}`}>
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="light">
-            <LanguageSwitcher />
             <Header />
             {children}
             <Footer />

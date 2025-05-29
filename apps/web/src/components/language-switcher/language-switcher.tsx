@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@strapi-portfolio/ui/css";
 
 const LanguageSwitcherStyles =
-  "px-4 flex overflow-hidden transition-all duration-150 ease-in-out h-[32px] bg-tertiary dark:bg-secondary/40";
+  "sticky px-4 flex overflow-hidden transition-all duration-150 ease-in-out h-[32px]";
 
 export function LanguageSwitcher() {
   const [show, setShow] = useState(true);
@@ -28,8 +28,8 @@ export function LanguageSwitcher() {
   return (
     <div
       className={cn(LanguageSwitcherStyles, {
-        "translate-y-0 opacity-100": show,
-        "-translate-y-full opacity-0": !show,
+        "z-50 translate-y-0 opacity-100": show,
+        "h-0 -translate-y-full opacity-0": !show,
       })}
     >
       <div className="flex-grow" />

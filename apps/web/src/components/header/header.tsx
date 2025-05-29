@@ -6,6 +6,7 @@ import { MobileNav, Nav } from "../nav";
 import { Logo } from "../logo";
 import { cn } from "@strapi-portfolio/ui/css";
 import { usePathname } from "@strapi-portfolio/web/i18n/navigation";
+import { LanguageSwitcher } from "../language-switcher";
 
 export function Header() {
   const [header, setHeader] = useState(false);
@@ -21,13 +22,19 @@ export function Header() {
 
   return (
     <header
-      className={cn("sticky top-0 z-30 px-4 transition-all", {
-        "dark:bg-accent bg-white py-4 shadow-lg": header,
-        "py-6 dark:bg-transparent": !header,
+      className={cn("sticky top-0 z-30  transition-all", {
+        "dark:bg-accent bg-white  shadow-lg": header,
+        "dark:bg-transparent": !header,
         "bg-[#fef9f5]": pathname === "/",
       })}
     >
-      <div className="container mx-auto">
+      <LanguageSwitcher />
+      <div
+        className={cn("container mx-auto px-4 py-4", {
+          "py-4": header,
+          "py-6": !header,
+        })}
+      >
         <Inline alignX="between" alignY="center">
           <Logo />
           <Inline alignY="center" space="6">
