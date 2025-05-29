@@ -915,6 +915,67 @@ export interface ApiQualificationQualification extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiReviewReview extends Struct.CollectionTypeSchema {
+  collectionName: "reviews";
+  info: {
+    displayName: "review";
+    pluralName: "reviews";
+    singularName: "review";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    avatar: Schema.Attribute.Media<"images" | "files" | "videos" | "audios"> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    jobPosition: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::review.review">;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Struct.SingleTypeSchema {
   collectionName: "services";
   info: {
@@ -1579,6 +1640,7 @@ declare module "@strapi/strapi" {
       "api::project-category.project-category": ApiProjectCategoryProjectCategory;
       "api::project.project": ApiProjectProject;
       "api::qualification.qualification": ApiQualificationQualification;
+      "api::review.review": ApiReviewReview;
       "api::service.service": ApiServiceService;
       "api::skill.skill": ApiSkillSkill;
       "api::skills-and-tool.skills-and-tool": ApiSkillsAndToolSkillsAndTool;
