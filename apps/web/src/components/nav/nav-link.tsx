@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "@strapi-portfolio/ui/css";
+import { Link, usePathname } from "@strapi-portfolio/web/i18n/navigation";
 import { NavigationLink } from "@strapi-portfolio/web/models";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 type NavLinkProps = {
   link: NavigationLink;
@@ -18,6 +18,7 @@ export function NavLink({
 }: NavLinkProps) {
   const path = usePathname();
   const isActive = path === link.path;
+  const t = useTranslations("navBar");
 
   return (
     <Link
@@ -34,7 +35,7 @@ export function NavLink({
           className={underlineStyles}
         />
       )}
-      {link.name}
+      {t(link.name)}
     </Link>
   );
 }

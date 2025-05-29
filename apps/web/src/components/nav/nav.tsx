@@ -9,7 +9,7 @@ type NavProps = {
 };
 
 const links: NavigationLink[] = [
-  { name: "Home", path: "/" },
+  { name: "home", path: "/" },
   { name: "projects", path: "/projects" },
   { name: "contact", path: "/contact" },
 ];

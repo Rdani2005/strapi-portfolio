@@ -1,6 +1,6 @@
 import { Button } from "@strapi-portfolio/ui";
-import Link from "next/link";
 import { ProjectsSlider } from "../../molecules";
+import { Link } from "@strapi-portfolio/web/i18n/navigation";
 
 export function Work() {
   return (

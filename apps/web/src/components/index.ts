@@ -4,3 +4,4 @@ export * from "./logo";
 export * from "./nav";
 export * from "./socials";
 export * from "./theme-toggle";
+export * from "./language-switcher";

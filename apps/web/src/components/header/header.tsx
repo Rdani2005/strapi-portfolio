@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { $Inline, Hidden, Inline } from "@strapi-portfolio/ui";
 import { ThemeToggler } from "../theme-toggle";
 import { MobileNav, Nav } from "../nav";
 import { Logo } from "../logo";
 import { cn } from "@strapi-portfolio/ui/css";
+import { usePathname } from "@strapi-portfolio/web/i18n/navigation";
 
 export function Header() {
   const [header, setHeader] = useState(false);

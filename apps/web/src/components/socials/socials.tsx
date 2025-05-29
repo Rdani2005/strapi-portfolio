@@ -5,8 +5,8 @@ import {
   RiLinkedinFill,
   RiYoutubeFill,
 } from "@strapi-portfolio/ui/icons";
+import { Link } from "@strapi-portfolio/web/i18n/navigation";
 import { SocialIcon } from "@strapi-portfolio/web/models";
-import Link from "next/link";
 
 const icons: SocialIcon[] = [
   {

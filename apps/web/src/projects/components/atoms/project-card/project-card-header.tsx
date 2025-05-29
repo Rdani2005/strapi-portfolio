@@ -1,7 +1,7 @@
 import { CardHeader, Inline } from "@strapi-portfolio/ui";
 import { GithubIcon, Link2Icon } from "@strapi-portfolio/ui/icons";
+import { Link } from "@strapi-portfolio/web/i18n/navigation";
 import { Project } from "@strapi-portfolio/web/projects/models";
-import Link from "next/link";
 import Image from "next/image";
 
 type ProjectCardProps = {

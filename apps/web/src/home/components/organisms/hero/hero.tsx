@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { $Inline, Button, Hidden, Inline, Stack } from "@strapi-portfolio/ui";
 import {
   DownloadIcon,
@@ -10,6 +9,7 @@ import {
 } from "@strapi-portfolio/ui/icons";
 import { Socials } from "@strapi-portfolio/web/components";
 import { Badge, DevImg } from "../../atoms";
+import { Link } from "@strapi-portfolio/web/i18n/navigation";
 
 export const Hero = () => {
   return (

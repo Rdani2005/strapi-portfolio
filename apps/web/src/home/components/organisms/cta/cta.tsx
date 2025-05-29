@@ -1,5 +1,5 @@
 import { Button, Stack } from "@strapi-portfolio/ui";
-import Link from "next/link";
+import { Link } from "@strapi-portfolio/web/i18n/navigation";
 
 export function Cta() {
   return (

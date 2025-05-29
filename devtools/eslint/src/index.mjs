@@ -34,6 +34,26 @@ export default unjs(
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "quote-props": ["error", "as-needed", { numbers: true }],
+      "no-restricted-imports": [
+        "error",
+        {
+          name: "next/link",
+          message:
+            "Use `@strapi-portfolio/web/i18n/navigation` instead for better i18n support.",
+          importNames: ["default"],
+        },
+        {
+          name: "next/navigation",
+          message:
+            "Use `@strapi-portfolio/web/i18n/navigation` instead for better i18n support.",
+          importNames: [
+            "redirect",
+            "permanentRedirect",
+            "useRouter",
+            "usePathname",
+          ],
+        },
+      ],
     },
   },
   {

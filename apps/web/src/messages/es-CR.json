@@ -1,0 +1,11 @@
+{
+  "navBar": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "localeSwitcher": {
+    "label": "Cambiar Idioma",
+    "locale": " { locale, select, en {Ingles} es {Espanol} other {desconocido}}"
+  }
+}

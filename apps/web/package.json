@@ -14,6 +14,7 @@
     "@strapi-portfolio/ui": "workspace:*",
     "framer-motion": "^12.11.3",
     "next": "15.3.2",
+    "next-intl": "^4.1.0",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
