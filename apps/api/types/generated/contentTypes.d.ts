@@ -708,6 +708,57 @@ export interface ApiHeroHero extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLatestProjectLatestProject extends Struct.SingleTypeSchema {
+  collectionName: "latest_projects";
+  info: {
+    displayName: "latestProject";
+    pluralName: "latest-projects";
+    singularName: "latest-project";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::latest-project.latest-project"
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProjectCategoryProjectCategory
   extends Struct.CollectionTypeSchema {
   collectionName: "project_categories";
@@ -718,11 +769,6 @@ export interface ApiProjectCategoryProjectCategory
   };
   options: {
     draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: false;
-    };
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -740,7 +786,84 @@ export interface ApiProjectCategoryProjectCategory
         maxLength: 200;
         minLength: 1;
       }>;
+    projects: Schema.Attribute.Relation<"manyToMany", "api::project.project">;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Struct.CollectionTypeSchema {
+  collectionName: "projects";
+  info: {
+    displayName: "project";
+    pluralName: "projects";
+    singularName: "project";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
+      Schema.Attribute.Private;
+    demoUrl: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    githubUrl: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::project.project"
+    >;
+    project_categories: Schema.Attribute.Relation<
+      "manyToMany",
+      "api::project-category.project-category"
+    >;
+    projectImage: Schema.Attribute.Media<"images" | "files"> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+        minLength: 1;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
       Schema.Attribute.Private;
@@ -1452,7 +1575,9 @@ declare module "@strapi/strapi" {
       "api::education.education": ApiEducationEducation;
       "api::experience.experience": ApiExperienceExperience;
       "api::hero.hero": ApiHeroHero;
+      "api::latest-project.latest-project": ApiLatestProjectLatestProject;
       "api::project-category.project-category": ApiProjectCategoryProjectCategory;
+      "api::project.project": ApiProjectProject;
       "api::qualification.qualification": ApiQualificationQualification;
       "api::service.service": ApiServiceService;
       "api::skill.skill": ApiSkillSkill;

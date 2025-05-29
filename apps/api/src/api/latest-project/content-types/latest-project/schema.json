@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "latest_projects",
+  "info": {
+    "singularName": "latest-project",
+    "pluralName": "latest-projects",
+    "displayName": "latestProject"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 1,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 1,
+      "required": true
+    }
+  }
+}
