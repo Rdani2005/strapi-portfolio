@@ -1,9 +1,25 @@
 {
   "name": "@strapi-portfolio/http",
-  "private": true,
   "version": "1.0.0",
-  "description": "",
   "keywords": [],
-  "author": "",
-  "license": "MIT"
+  "author": "rdani2005",
+  "license": "MIT",
+  "description": "API HTTP client for Strapi Portfolio backend. Here, we will receive all required information from strapi.",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@strapi-portfolio/core": "workspace:*",
+    "valibot": "^1.1.0"
+  },
+  "devDependencies": {
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@tsconfig/node20": "^20.1.5",
+    "@types/node": "^22.15.27"
+  }
 }

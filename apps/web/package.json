@@ -2,6 +2,9 @@
   "name": "@strapi-portfolio/web",
   "version": "0.1.0",
   "private": true,
+  "author": "rdani2005",
+  "license": "MIT",
+  "description": "this is the web application for Strapi Portfolio, built with Next.js and TypeScript.",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

@@ -2,7 +2,9 @@
   "name": "@strapi-portfolio/api",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "author": "rdani2005",
+  "license": "MIT",
+  "description": "Strapi Portfolio API Backend using Strapi and PostgreSQL",
   "scripts": {
     "build": "strapi build",
     "console": "strapi console",

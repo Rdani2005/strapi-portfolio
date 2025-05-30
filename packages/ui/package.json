@@ -2,10 +2,10 @@
   "name": "@strapi-portfolio/ui",
   "private": true,
   "version": "1.0.0",
-  "description": "",
   "keywords": [],
   "author": "Rdani2005",
   "license": "MIT",
+  "description": "This is the UI library for Strapi Portfolio, built with React, ShadCN and Tailwind CSS.",
   "exports": {
     ".": "./src/index.ts",
     "./css": "./src/css/index.ts",
