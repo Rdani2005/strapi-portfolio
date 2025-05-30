@@ -6,13 +6,15 @@ import {
   AboutSkills,
   AboutTabs,
 } from "../../molecules";
+import { useTranslations } from "next-intl";
 
 export function About() {
+  const t = useTranslations("aboutMeSection");
   return (
     <section className="wide:py-24 wide:h-[860px] px-4 pb-12 ">
       <div className="container mx-auto">
         <h2 className="section-title wide:mb-16 mx-auto mb-8 text-center">
-          About Me
+          {t("title")}
         </h2>
         <div className="wide:flex-row flex flex-col">
           <div className="wide:flex relative hidden flex-1">

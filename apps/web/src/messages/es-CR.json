@@ -6,6 +6,33 @@
   },
   "localeSwitcher": {
     "label": "Cambiar Idioma",
-    "locale": " { locale, select, en {Ingles} es {Espanol} other {desconocido}}"
+    "locale": " { locale, select, en {Inglés} es {Español} other {desconocido}}"
+  },
+  "contact": {
+    "contactMe": "Contáctame",
+    "ready": "¿Listo para hacer realidad tus ideas? ¡Trabajemos juntos!",
+    "letsTalk": "Hablemos"
+  },
+  "projects": {
+    "title": "Mis Proyectos"
+  },
+  "allProjects": {
+    "seeAll": "Ver Todos"
+  },
+  "reviews": {
+    "title": "Reseñas"
+  },
+  "aboutMeSection": {
+    "title": "Sobre Mi",
+    "languageSkills": "Habilidades Lingüísticas",
+    "personalInfo": "Info Personal",
+    "qualifications": "Calificaciones",
+    "skills": "Habilidades"
+  },
+  "myServicesSection": {
+    "title": "Mis Servicios",
+    "webDesign": "Diseño Web",
+    "webDevelopment": "Desarrollo Web",
+    "appDevelopment": "Desarrollo de Aplicaciones"
   }
 }

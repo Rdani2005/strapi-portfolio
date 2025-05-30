@@ -8,11 +8,13 @@ import {
   CardTitle,
 } from "@strapi-portfolio/ui";
 import { cn } from "@strapi-portfolio/ui/css";
+import { useTranslations } from "next-intl";
 
 type ServiceItemProps = {
   item: Service;
 };
 export function ServiceItem({ item }: ServiceItemProps) {
+  const t = useTranslations("myServicesSection");
   return (
     <Card
       className={cn(
@@ -26,7 +28,7 @@ export function ServiceItem({ item }: ServiceItemProps) {
         </div>
       </CardHeader>
       <CardContent className="text-center">
-        <CardTitle className="mb-4 text-2xl">{item.title}</CardTitle>
+        <CardTitle className="mb-4 text-2xl">{t(item.title)}</CardTitle>
         <CardDescription className="text-lg">
           {item.description}
         </CardDescription>

@@ -1,11 +1,38 @@
 {
   "navBar": {
-    "home": "Inicio",
-    "projects": "Proyectos",
-    "contact": "Contacto"
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
   },
   "localeSwitcher": {
     "label": "Change Language",
     "locale": " { locale, select, en {English} es {Spanish} other {unknown}}"
+  },
+  "contact": {
+    "contactMe": "Contact Me",
+    "ready": "Prepared to turn your ideas into reality? Let's work together!",
+    "letsTalk": "Let's Talk"
+  },
+  "allProjects": {
+    "seeAll": "All Projects"
+  },
+  "projects": {
+    "title": "My Projects"
+  },
+  "reviews": {
+    "title": "Reviews"
+  },
+  "aboutMeSection": {
+    "title": "About Me",
+    "languageSkills": "Language Skills",
+    "personalInfo": "Personal Info",
+    "qualifications": "Qualifications",
+    "skills": "Skills"
+  },
+  "myServicesSection": {
+    "title": "My Services",
+    "webDesign": "Web Design",
+    "webDevelopment": "Web Development",
+    "appDevelopment": "App Development"
   }
 }

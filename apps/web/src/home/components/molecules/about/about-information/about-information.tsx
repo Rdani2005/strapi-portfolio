@@ -9,6 +9,7 @@ import {
 } from "@strapi-portfolio/ui/icons";
 import { type AboutInfo } from "@strapi-portfolio/web/home/models";
 import { AboutInfoItem } from "../../../atoms";
+import { useTranslations } from "next-intl";
 
 const infoData: AboutInfo[] = [
   {
@@ -37,6 +38,8 @@ const infoData: AboutInfo[] = [
   },
 ];
 export function AboutInformation() {
+  const t = useTranslations("aboutMeSection");
+
   return (
     <TabsContent value="info">
       <div className="wide:text-left text-center">
@@ -53,7 +56,7 @@ export function AboutInformation() {
         </div>
 
         <Stack space="2">
-          <div className="text-primary">Language Skills</div>
+          <div className="text-primary">{t("languageSkills")}</div>
           <div className="border-border border-b" />
           <div className="">English, Spanish, Portuguese</div>
         </Stack>

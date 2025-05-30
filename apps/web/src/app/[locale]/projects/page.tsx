@@ -5,6 +5,7 @@ import {
   type Project,
   ALL_PROJECT_CATEGORIES,
 } from "@strapi-portfolio/web/projects/models";
+import { useTranslations } from "next-intl";
 
 const projectsData: Project[] = [
   {
@@ -87,11 +88,12 @@ const uniqueCategories: ProjectCategory[] = [
 ];
 
 export default function ProjectsPage() {
+  const t = useTranslations("projects");
   return (
     <section className="min-h-screen pt-12">
       <Container>
         <h2 className="section-title wide:mb-16 mx-auto mb-8 text-center">
-          My Projects
+          {t("title")}
         </h2>
         <CurrentProjects
           currentCategories={uniqueCategories}

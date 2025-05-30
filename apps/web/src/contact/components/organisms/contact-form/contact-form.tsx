@@ -7,8 +7,10 @@ import {
   ArrowRightIcon,
   MessageSquare,
 } from "@strapi-portfolio/ui/icons";
+import { useTranslations } from "next-intl";
 
 export function ContactForm() {
+  const t = useTranslations("contact");
   return (
     <form className={$Stack({ space: "4" })}>
       <Inline className="relative" alignY="center">
@@ -24,7 +26,7 @@ export function ContactForm() {
         <MessageSquare className="absolute right-6 top-4" size={20} />
       </Inline>
       <Button className="max-w-[166px] items-center">
-        Let&apos;s talk <ArrowRightIcon size={20} />
+        {t("letsTalk")} <ArrowRightIcon size={20} />
       </Button>
     </form>
   );

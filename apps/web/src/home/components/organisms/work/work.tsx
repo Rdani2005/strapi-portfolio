@@ -1,8 +1,11 @@
 import { Button } from "@strapi-portfolio/ui";
 import { ProjectsSlider } from "../../molecules";
 import { Link } from "@strapi-portfolio/web/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export function Work() {
+  const t = useTranslations("allProjects");
+
   return (
     <section className="wide:mb-48 wide:px-0 relative mb-12 px-4">
       <div className="container mx-auto">
@@ -12,7 +15,7 @@ export function Work() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
           <Link href={"/projects"}>
-            <Button>All Projects</Button>
+            <Button>{t("seeAll")}</Button>
           </Link>
         </div>
         <ProjectsSlider />
