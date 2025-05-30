@@ -1,4 +1,4 @@
-import { forwardRef, type ElementRef, ComponentPropsWithoutRef } from "react";
+import { forwardRef, ComponentPropsWithoutRef, type ComponentRef } from "react";
 import { css, extractVariantsFromProps, VariantProps } from "../../css";
 import { Slot } from "../../components";
 
@@ -56,7 +56,7 @@ export type ContentBlockProps = VariantProps<typeof $ContentBlock> &
 /**
  * Constrains the maximum width of page content providing standard spacing.
  */
-export const ContentBlock = forwardRef<ElementRef<"div">, ContentBlockProps>(
+export const ContentBlock = forwardRef<ComponentRef<"div">, ContentBlockProps>(
   (props, ref) => {
     const [variants, { as: Tag, asChild, ...contentBlockProps }] =
       extractVariantsFromProps($ContentBlock, props);

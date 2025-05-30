@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, forwardRef, type ElementRef } from "react";
+import { ComponentPropsWithoutRef, type Ref } from "react";
 import { oneline } from "@strapi-portfolio/core";
 import { css, extractVariantsFromProps, VariantProps } from "../../css";
 
@@ -10,18 +10,14 @@ const $Container = css({
 });
 
 export type ContainerProps = VariantProps<typeof $Container> &
-  ComponentPropsWithoutRef<"div">;
+  ComponentPropsWithoutRef<"div"> & {
+    ref?: Ref<HTMLDivElement>;
+  };
 
-export const Container = forwardRef<ElementRef<"div">, ContainerProps>(
-  (props, ref) => {
-    const [variants, containerProps] = extractVariantsFromProps(
-      $Container,
-      props,
-    );
-    return (
-      <div {...containerProps} ref={ref} className={$Container(variants)} />
-    );
-  },
-);
-
-Container.displayName = "Container";
+export function Container({ ref, ...props }: ContainerProps) {
+  const [variants, containerProps] = extractVariantsFromProps(
+    $Container,
+    props,
+  );
+  return <div {...containerProps} ref={ref} className={$Container(variants)} />;
+}

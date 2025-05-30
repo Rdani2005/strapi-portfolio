@@ -1,9 +1,4 @@
-import {
-  forwardRef,
-  Children,
-  type ElementRef,
-  type ComponentPropsWithoutRef,
-} from "react";
+import { Children, type ComponentPropsWithoutRef, Ref } from "react";
 import { space, verticalAlignX } from "../variants";
 import { $Hidden, extractHiddenPropsFromChild } from "../hidden";
 import { Separator } from "../separator";
@@ -19,12 +14,15 @@ export const $Stack = css({
 });
 
 export type StackProps = VariantProps<typeof $Stack> &
-  ComponentPropsWithoutRef<"div"> & { separators?: boolean };
+  ComponentPropsWithoutRef<"div"> & {
+    ref?: Ref<HTMLDivElement>;
+    separators?: boolean;
+  };
 
 /**
  * Group elements vertically and apply evenly space between them.
  */
-export const Stack = forwardRef<ElementRef<"div">, StackProps>((props, ref) => {
+export function Stack({ ref, ...props }: StackProps) {
   const [variants, { separators, children, className, ...stackProps }] =
     extractVariantsFromProps($Stack, props);
 
@@ -66,6 +64,6 @@ export const Stack = forwardRef<ElementRef<"div">, StackProps>((props, ref) => {
       {items}
     </div>
   );
-});
+}
 
 Stack.displayName = "Stack";

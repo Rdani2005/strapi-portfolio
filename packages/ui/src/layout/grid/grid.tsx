@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
+import { ComponentPropsWithoutRef, Ref } from "react";
 import { css, extractVariantsFromProps, VariantProps } from "../../css";
 import { space } from "../variants";
 
@@ -39,25 +39,18 @@ export const $Grid = css({
   },
 });
 
-export type GridProps = VariantProps<typeof $Grid> &
-  ComponentPropsWithoutRef<"div">;
+type GridProps = VariantProps<typeof $Grid> &
+  ComponentPropsWithoutRef<"div"> & {
+    innerRef?: Ref<HTMLDivElement>;
+  };
 
-/**
- * Centers content vertically and horizontally within itself.
- */
-export const Grid = forwardRef<ElementRef<"div">, GridProps>((props, ref) => {
-  const [variants, gridProps] = extractVariantsFromProps($Grid, props);
-  const className = gridProps.className;
+export function Grid({ innerRef, className, ...rest }: GridProps) {
+  const [variants, gridProps] = extractVariantsFromProps($Grid, rest);
   return (
     <div
       {...gridProps}
-      ref={ref}
-      className={$Grid({
-        ...variants,
-        className,
-      })}
+      ref={innerRef}
+      className={`${$Grid(variants)} ${className ?? ""}`}
     />
   );
-});
-
-Grid.displayName = "Grid";
+}

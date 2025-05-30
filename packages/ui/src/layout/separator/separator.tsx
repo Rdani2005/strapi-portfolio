@@ -1,11 +1,7 @@
 "use client";
-import {
-  forwardRef,
-  type ElementRef,
-  type ComponentPropsWithoutRef,
-} from "react";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { css, extractVariantsFromProps, VariantProps } from "../../css";
+import { ComponentPropsWithoutRef } from "react";
 
 const $Separator = css({
   base: "bg-accent-border shrink-0",
@@ -31,13 +27,7 @@ export type SeparatorProps = VariantProps<typeof $Separator> &
     "orientation" | "children" | "asChild"
   >;
 
-/**
- * Visually or semantically separates content.
- */
-export const Separator = forwardRef<
-  ElementRef<typeof SeparatorPrimitive.Root>,
-  SeparatorProps
->((props, ref) => {
+function Separator({ ...props }: SeparatorProps) {
   const [variants, separatorProps] = extractVariantsFromProps(
     $Separator,
     props,
@@ -50,11 +40,10 @@ export const Separator = forwardRef<
       // eslint-disable-next-line react/no-children-prop
       children={false}
       asChild={false}
-      ref={ref}
       decorative={props.decorative ?? true}
       orientation={orientation}
       className={$Separator(variants)}
     />
   );
-});
-Separator.displayName = SeparatorPrimitive.Root.displayName;
+}
+export { Separator };

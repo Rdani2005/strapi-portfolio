@@ -1,4 +1,4 @@
-import { forwardRef, type ElementRef, ComponentPropsWithoutRef } from "react";
+import { type ComponentPropsWithoutRef, type Ref } from "react";
 import { css, extractVariantsFromProps, VariantProps } from "../../css";
 import { oneline } from "@strapi-portfolio/core";
 
@@ -14,16 +14,11 @@ const $Center = css({
 });
 
 export type CenterProps = VariantProps<typeof $Center> &
-  ComponentPropsWithoutRef<"div">;
+  ComponentPropsWithoutRef<"div"> & {
+    ref?: Ref<HTMLDivElement>;
+  };
 
-/**
- * Centers content vertically and horizontally within itself.
- */
-export const Center = forwardRef<ElementRef<"div">, CenterProps>(
-  (props, ref) => {
-    const [variants, centerProps] = extractVariantsFromProps($Center, props);
-    return <div {...centerProps} ref={ref} className={$Center(variants)} />;
-  },
-);
-
-Center.displayName = "Center";
+export function Center({ ref, ...props }: CenterProps) {
+  const [variants, centerProps] = extractVariantsFromProps($Center, props);
+  return <div {...centerProps} ref={ref} className={$Center(variants)} />;
+}

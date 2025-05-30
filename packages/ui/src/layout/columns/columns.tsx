@@ -1,9 +1,8 @@
 import {
   Children,
-  forwardRef,
   cloneElement,
-  type ElementRef,
   type ComponentPropsWithoutRef,
+  type Ref,
 } from "react";
 import { css, extractVariantsFromProps, VariantProps } from "../../css";
 import { horizontalAlignX, horizontalAlignY, space } from "../variants";
@@ -41,25 +40,24 @@ const $Column = css({
 });
 
 export type ColumnProps = VariantProps<typeof $Column> &
-  ComponentPropsWithoutRef<"div">;
+  ComponentPropsWithoutRef<"div"> & {
+    ref?: Ref<HTMLDivElement>;
+  };
 
-export const Column = forwardRef<ElementRef<"div">, ColumnProps>(
-  (props, ref) => {
-    const [variants, { className, ...columnProps }] = extractVariantsFromProps(
-      $Column,
-      props,
-    );
+export function Column({ ref, ...props }: ColumnProps) {
+  const [variants, { className, ...columnProps }] = extractVariantsFromProps(
+    $Column,
+    props,
+  );
 
-    return (
-      <div
-        {...columnProps}
-        ref={ref}
-        className={$Column({ ...variants, className })}
-      />
-    );
-  },
-);
-Column.displayName = "Column";
+  return (
+    <div
+      {...columnProps}
+      ref={ref}
+      className={$Column({ ...variants, className })}
+    />
+  );
+}
 
 const $Columns = css({
   base: "flex w-full flex-row",
@@ -71,42 +69,41 @@ const $Columns = css({
 });
 
 export type ColumnsProps = VariantProps<typeof $Columns> &
-  ComponentPropsWithoutRef<"div"> & { separators?: boolean };
+  ComponentPropsWithoutRef<"div"> & { separators?: boolean } & {
+    ref?: Ref<HTMLDivElement>;
+  };
 
 /**
  * Group elements horizontally and apply evenly space between them. Similar to the `Inline` component,
  * but `Columns` provides more control over the columns width via the `width` prop of the `Column` component.
  */
-export const Columns = forwardRef<ElementRef<"div">, ColumnsProps>(
-  (props, ref) => {
-    const [variants, { separators, children, className, ...columnsProps }] =
-      extractVariantsFromProps($Columns, props);
+export function Columns({ ref, ...props }: ColumnsProps) {
+  const [variants, { separators, children, className, ...columnsProps }] =
+    extractVariantsFromProps($Columns, props);
 
-    const items = Children.map(children, (child, index) => {
-      if (isNil(child) || child === false) return child;
+  const items = Children.map(children, (child, index) => {
+    if (isNil(child) || child === false) return child;
 
-      const children =
-        isHiddenComponent(child) && !child.props.asChild
-          ? cloneElement(child, { asChild: true })
-          : child;
-
-      return (
-        <>
-          {!!separators && index > 0 && <Separator vertical />}
-          {children}
-        </>
-      );
-    });
+    const children =
+      isHiddenComponent(child) && !child.props.asChild
+        ? cloneElement(child, { asChild: true })
+        : child;
 
     return (
-      <div
-        {...columnsProps}
-        ref={ref}
-        className={$Columns({ ...variants, className })}
-      >
-        {items}
-      </div>
+      <>
+        {!!separators && index > 0 && <Separator vertical />}
+        {children}
+      </>
     );
-  },
-);
-Columns.displayName = "Columns";
+  });
+
+  return (
+    <div
+      {...columnsProps}
+      ref={ref}
+      className={$Columns({ ...variants, className })}
+    >
+      {items}
+    </div>
+  );
+}
