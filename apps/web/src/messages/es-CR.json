@@ -1,4 +1,11 @@
 {
+  "heroSection": {
+    "contactMe": "Contáctame",
+    "cv": "Descargar CV",
+    "clients": "Clientes Felices",
+    "yearsExperience": "Años de Experiencia",
+    "finishedProjects": "Proyectos Completados"
+  },
   "navBar": {
     "home": "Inicio",
     "projects": "Proyectos",

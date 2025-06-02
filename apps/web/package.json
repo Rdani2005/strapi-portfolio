@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@strapi-portfolio/core": "workspace:*",
+    "@strapi-portfolio/http": "workspace:*",
     "@strapi-portfolio/ui": "workspace:*",
     "framer-motion": "^12.11.3",
     "next": "15.3.2",

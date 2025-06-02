@@ -5,8 +5,12 @@ import { MutationOptions } from "./mutation";
 import { ExecuteOptions, executeFunction } from "./execute";
 
 export abstract class Fetcher {
-  constructor(protected baseUrl: string) {
-    Guard.nonempty(this.baseUrl, "baseUrl");
+  constructor(
+    protected baseUrl: string,
+    protected bearerToken: string,
+  ) {
+    Guard.required(this.baseUrl, "baseUrl");
+    Guard.required(this.bearerToken, "Authorization Bearer Token");
   }
 
   protected query<
@@ -30,6 +34,7 @@ export abstract class Fetcher {
       url,
       method,
       response,
+      bearerToken: this.bearerToken,
     });
   }
 
@@ -49,6 +54,7 @@ export abstract class Fetcher {
       method,
       response,
       body: input,
+      bearerToken: this.bearerToken,
     });
   }
 

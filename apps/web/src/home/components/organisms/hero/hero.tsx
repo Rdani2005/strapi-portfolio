@@ -10,31 +10,37 @@ import {
 import { Socials } from "@strapi-portfolio/web/components";
 import { Badge, DevImg } from "../../atoms";
 import { Link } from "@strapi-portfolio/web/i18n/navigation";
+import { HeroItem as HeroModel } from "@strapi-portfolio/web/home/models";
+import { useTranslations } from "next-intl";
 
-export const Hero = () => {
+type HeroProps = {
+  hero: HeroModel;
+};
+
+export const Hero = ({ hero }: HeroProps) => {
+  const t = useTranslations("heroSection");
   return (
     <section className="wide:py-24 wide:pt-28 bg-hero wide:px-0 h-[84vh] bg-cover bg-bottom bg-no-repeat px-4 py-12 dark:bg-none">
       <div className="container mx-auto">
         <Inline alignX="between" space="8">
           <Stack className="wide:mx-0 wide:text-left mx-auto max-w-[600px] justify-center text-center">
             <div className="text-primary mb-4 text-sm font-semibold uppercase tracking-[4px]">
-              Web Developer
+              {hero.jobTitle}
             </div>
-            <h1 className="h1 mb-4">Hello! My name is Daniel Sequeira</h1>
+            <h1 className="h1 mb-4">{hero.title}</h1>
             <p className="subtitle desktop:mx-0 mx-auto max-w-[490px]">
-              Brief Description with insights into myself, my vocational journey
-              and what I engage in professionally
+              {hero.description}
             </p>
 
             <div className="tablet:flex-row wide:mx-0 mx-auto mb-12 flex flex-col gap-3">
               <Button className="gap-x-2" asChild>
                 <Link href={"/contact"}>
-                  Contact Me <SendIcon size={18} />
+                  {t("contactMe")} <SendIcon size={18} />
                 </Link>
               </Button>
               <Button className="gap-x-2" variant="secondary" asChild>
                 <Link href={"/contact"}>
-                  Download CV <DownloadIcon size={18} />
+                  {t("cv")} <DownloadIcon size={18} />
                 </Link>
               </Button>
             </div>
@@ -54,21 +60,21 @@ export const Hero = () => {
               icon={<RiBriefcase4Fill />}
               endCountNumber={5}
               endCountText="+"
-              badgeText="Years of Experience"
+              badgeText={t("yearsExperience")}
             />
             <Badge
               containerStyles="absolute top-[80%] -left-[1rem]"
               icon={<RiTodoFill />}
               endCountNumber={10}
               endCountText="+"
-              badgeText="Finished Projects"
+              badgeText={t("finishedProjects")}
             />
             <Badge
               containerStyles="absolute top-[55%] -right-8"
               icon={<RiTeamFill />}
               endCountNumber={7}
               endCountText="k"
-              badgeText="Happy Clients"
+              badgeText={t("clients")}
             />
             <div className="bg-hero_shape2  absolute -right-2 -top-1 h-[500px] w-[500px] bg-no-repeat" />
             <DevImg

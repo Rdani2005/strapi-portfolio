@@ -1,7 +1,7 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cn, css, VariantProps } from "../../css";
 import { Prettify } from "@strapi-portfolio/core";
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import { ButtonHTMLAttributes, Ref } from "react";
 
 const $Button = css({
   base: "focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full  text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -36,21 +36,26 @@ export type ButtonProps = Prettify<
   ButtonHTMLAttributes<HTMLButtonElement> &
     ButtonVariant & {
       asChild?: boolean;
+      ref: Ref<HTMLButtonElement>;
     }
 >;
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return (
-      <Comp
-        className={cn($Button({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  },
-);
-Button.displayName = "Button";
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ref,
+  ...props
+}: ButtonProps) {
+  const Comp = asChild ? Slot : "button";
+  return (
+    <Comp
+      className={cn($Button({ variant, size, className }))}
+      ref={ref}
+      {...props}
+    />
+  );
+}
 
 export { Button, $Button };
