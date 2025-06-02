@@ -2,6 +2,7 @@ import { LocaleSchema } from "@strapi-portfolio/web/config";
 import {
   About,
   Cta,
+  getAboutInfo,
   getHeroInformation,
   Hero,
   Reviews,
@@ -15,14 +16,18 @@ type Props = {
 };
 
 export default async function Home({ params }: Props) {
-  const { locale } = await params;
+  const locale = parse(LocaleSchema, (await params).locale);
   const hero = await getHeroInformation({
-    locale: parse(LocaleSchema, locale),
+    locale: locale,
   });
+  const devInformation = await getAboutInfo({
+    locale,
+  });
+
   return (
     <main>
       <Hero hero={hero} />
-      <About />
+      <About devInformation={devInformation} />
       <Services />
       <Work />
       <Reviews />

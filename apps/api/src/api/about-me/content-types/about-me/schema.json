@@ -92,6 +92,14 @@
       },
       "minLength": 1,
       "required": true
+    },
+    "languageSkills": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
