@@ -1,4 +1,4 @@
-import { AboutMeInfoResponse } from "@strapi-portfolio/http";
+import { AboutMeInfoResponse, LocaleOptions } from "@strapi-portfolio/http";
 import { AboutMeInformation } from "../../models";
 import {
   CalendarIcon,
@@ -9,8 +9,14 @@ import {
   User2Icon,
 } from "@strapi-portfolio/ui/icons";
 
+const bornOnLanguageFormat = {
+  en: "Born on",
+  "es-CR": "Nacido el",
+};
+
 export function getAboutInfoResponseToModel(
   response: AboutMeInfoResponse,
+  locale: LocaleOptions = "en",
 ): AboutMeInformation {
   return {
     title: response.data.title,
@@ -31,7 +37,14 @@ export function getAboutInfoResponseToModel(
       },
       {
         icon: <CalendarIcon size={20} />,
-        text: `Born on ${new Date(response.data.birthDate).toLocaleDateString()}`,
+        text: `${bornOnLanguageFormat[locale] ?? bornOnLanguageFormat.en} ${response.data.birthDate.toLocaleDateString(
+          "en-US",
+          {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          },
+        )}`,
       },
       {
         icon: <GraduationCapIcon size={20} />,

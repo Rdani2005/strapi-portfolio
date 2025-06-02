@@ -42,7 +42,7 @@ export function LocaleSwitcherSelect({ defaultValue }: Props) {
       onValueChange={onValueChange}
       disabled={isPending}
     >
-      <SelectTrigger className="font-aeonik flex h-[32px] w-auto items-center justify-between gap-[3.5px] rounded-md border-0 bg-transparent pr-[8px] text-[11px] font-bold focus:ring-0 focus:ring-offset-0">
+      <SelectTrigger className="flex h-[32px] w-auto items-center justify-between gap-[3.5px] rounded-md border-0 border-none bg-transparent pr-[8px] text-[11px] font-bold shadow-none focus:ring-0 focus:ring-offset-0">
         <GlobeIcon className="h-[16px] w-[16px] flex-shrink-0"></GlobeIcon>
         <SelectValue />
       </SelectTrigger>
