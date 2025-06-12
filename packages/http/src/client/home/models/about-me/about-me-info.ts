@@ -1,14 +1,5 @@
-import {
-  object,
-  number,
-  string,
-  isoDate,
-  pipe,
-  InferOutput,
-  transform,
-  optional,
-} from "valibot";
-import { LocaleOptions } from "../../../shared";
+import { object, number, string, InferOutput, optional } from "valibot";
+import { formatDate, LocaleOptions } from "../../../shared";
 
 export const AboutMeInfoData = object({
   id: number("id is required"),
@@ -19,11 +10,7 @@ export const AboutMeInfoData = object({
   devEmail: string("devEmail is required"),
   career: string("career is required"),
   phoneNumber: string("phoneNumber is required"),
-  birthDate: pipe(
-    string("birthDate is required"),
-    isoDate("birthDate must be a date"),
-    transform((date) => new Date(date)),
-  ),
+  birthDate: formatDate("birthDate"),
   home: string("home is required"),
   locale: string("locale is required"),
   languageSkills: string("languageSkills is required"),

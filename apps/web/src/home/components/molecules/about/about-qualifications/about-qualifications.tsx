@@ -1,67 +1,39 @@
-import { TabsContent } from "@strapi-portfolio/ui";
+import { Grid, TabsContent } from "@strapi-portfolio/ui";
 import { BriefcaseIcon, GraduationCapIcon } from "@strapi-portfolio/ui/icons";
 import {
-  filterByTitle,
+  type EducationQualification,
+  type ExperienceQualification,
   type Qualification,
 } from "@strapi-portfolio/web/home/models";
 import { AboutQualificationItem } from "../../../atoms";
+import {
+  EducationQualificationModelToQualification,
+  ExperienceQualificationModelToQualification,
+} from "@strapi-portfolio/web/home/mappers";
+import { useLocale, useTranslations } from "next-intl";
 
-const qualificationData: Qualification[] = [
-  {
-    title: "Education",
-    data: [
-      {
-        name: "ULACIT",
-        qualification: "Bachellor of Computer Engineer",
-        years: "2025 - present",
-      },
-      {
-        name: "CTP Calle Blancos",
-        qualification: "Software Development Technician",
-        years: "2020 - 2023",
-      },
-      {
-        name: "Platzi",
-        qualification: "Software Engineer",
-        years: "2016 - present",
-      },
-    ],
-  },
-  {
-    title: "Experience",
-    data: [
-      {
-        name: "Servicios Internacionales Multidisciplinarios",
-        qualification: "Senior Software Developer",
-        years: "2024 - present",
-      },
-      {
-        name: "Orbitas Software Development Group",
-        qualification: "Senior Software Architect",
-        years: "2022 - 2024",
-      },
-      {
-        name: "Freelancer",
-        qualification: "Senior Software Consultant",
-        years: "2020 - present",
-      },
-    ],
-  },
-];
+type AboutQualificationsProps = {
+  experience: ExperienceQualification;
+  education: EducationQualification;
+};
 
-export function AboutQualifications() {
-  const experienceQualification: Qualification | undefined =
-    filterByTitle<Qualification>(qualificationData, "Experience");
-  const educationQualification: Qualification | undefined =
-    filterByTitle<Qualification>(qualificationData, "Education");
+export function AboutQualifications({
+  education,
+  experience,
+}: AboutQualificationsProps) {
+  const locale = useLocale();
+  const experienceQualification: Qualification =
+    ExperienceQualificationModelToQualification(experience, locale as any);
+  const educationQualification: Qualification =
+    EducationQualificationModelToQualification(education, locale as any);
+
+  const t = useTranslations("aboutMeSection");
+
   return (
     <TabsContent value="qualification">
       <div className="">
-        <h3 className="h3 wide:text-left mb-8 text-center">
-          My Awesome Journey
-        </h3>
-
-        <div className="desktop:grid-cols-2 mb-12 grid gap-y-8">
+        <h3 className="h3 wide:text-left mb-8 text-center">{t("journey")}</h3>
+        <Grid className="mb-12" space="8" columns="1" desktop="2">
           <AboutQualificationItem
             icon={<BriefcaseIcon size={28} />}
             qualification={experienceQualification}
@@ -70,7 +42,7 @@ export function AboutQualifications() {
             icon={<GraduationCapIcon size={28} />}
             qualification={educationQualification}
           />
-        </div>
+        </Grid>
       </div>
     </TabsContent>
   );

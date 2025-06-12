@@ -5,10 +5,17 @@ import {
   GetHeroRequest,
   HeroResponse,
 } from "../models";
+import {
+  QualificationsInput,
+  QualificationsResponse,
+} from "../models/about-me/qualifications";
 
 export interface HomeEndpoints {
   getHero(input: GetHeroRequest): Promise<HeroResponse>;
   getAboutMeInfo(input: GetAboutMeInfoRequest): Promise<AboutMeInfoResponse>;
+  getQualifications(
+    input: QualificationsInput,
+  ): Promise<QualificationsResponse>;
 }
 
 export class HomeEndpointsFetcher extends Fetcher implements HomeEndpoints {
@@ -28,6 +35,16 @@ export class HomeEndpointsFetcher extends Fetcher implements HomeEndpoints {
     return this.query({
       path: "/about-me",
       response: AboutMeInfoResponse,
+      input,
+    });
+  }
+
+  getQualifications(
+    input: QualificationsInput,
+  ): Promise<QualificationsResponse> {
+    return this.query({
+      path: "/qualification?populate[educations][fields][0]=name&populate[educations][fields][1]=career&populate[educations][fields][2]=startDate&populate[educations][fields][3]=endDate&populate[educations][fields][4]=currentlyStuding&populate[experiences][fields][0]=jobTitle&populate[experiences][fields][1]=company&populate[experiences][fields][2]=startDate&populate[experiences][fields][3]=endDate&populate[experiences][fields][4]=currentlyWorkingHere",
+      response: QualificationsResponse,
       input,
     });
   }

@@ -4,6 +4,7 @@ import {
   Cta,
   getAboutInfo,
   getHeroInformation,
+  getQualifications,
   Hero,
   Reviews,
   Services,
@@ -23,11 +24,17 @@ export default async function Home({ params }: Props) {
   const devInformation = await getAboutInfo({
     locale,
   });
+  const devQualifications = await getQualifications({
+    locale,
+  });
 
   return (
     <main>
       <Hero hero={hero} />
-      <About devInformation={devInformation} />
+      <About
+        devQualifications={devQualifications}
+        devInformation={devInformation}
+      />
       <Services />
       <Work />
       <Reviews />

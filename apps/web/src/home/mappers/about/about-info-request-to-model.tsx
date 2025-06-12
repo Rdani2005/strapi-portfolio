@@ -38,7 +38,7 @@ export function getAboutInfoResponseToModel(
       {
         icon: <CalendarIcon size={20} />,
         text: `${bornOnLanguageFormat[locale] ?? bornOnLanguageFormat.en} ${response.data.birthDate.toLocaleDateString(
-          "en-US",
+          locale,
           {
             day: "numeric",
             month: "long",

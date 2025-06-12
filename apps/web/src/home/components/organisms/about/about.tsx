@@ -7,13 +7,21 @@ import {
   AboutTabs,
 } from "../../molecules";
 import { useTranslations } from "next-intl";
-import { type AboutMeInformation } from "@strapi-portfolio/web/home/models";
+import {
+  EducationQualification,
+  ExperienceQualification,
+  type AboutMeInformation,
+} from "@strapi-portfolio/web/home/models";
 
 type AboutProps = {
   devInformation: AboutMeInformation;
+  devQualifications: {
+    experience: ExperienceQualification;
+    education: EducationQualification;
+  };
 };
 
-export function About({ devInformation }: AboutProps) {
+export function About({ devInformation, devQualifications }: AboutProps) {
   const t = useTranslations("aboutMeSection");
   return (
     <section className="wide:py-24 wide:h-[860px] px-4 pb-12 ">
@@ -33,7 +41,7 @@ export function About({ devInformation }: AboutProps) {
               <AboutTabs />
               <div className="wide:mt-8 mt-12 text-lg ">
                 <AboutInformation information={devInformation} />
-                <AboutQualifications />
+                <AboutQualifications {...devQualifications} />
                 <AboutSkills />
               </div>
             </Tabs>
