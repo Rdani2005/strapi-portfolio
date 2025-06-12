@@ -1,27 +1,34 @@
-import {
-  array,
-  InferOutput,
-  object,
-  optional,
-  pipe,
-  string,
-  url,
-} from "valibot";
+import { array, InferOutput, object, pipe, string, url } from "valibot";
 
-export const Skill = object({
-  name: string(),
-  imgPath: optional(pipe(string(), url())),
-});
+export const Tool = object(
+  {
+    id: string("Tool ID is required"),
+    name: string("Tool name is required"),
+    imgPath: pipe(
+      string("imgPath is required"),
+      url("imgPath must be a valid URL"),
+    ),
+  },
+  "Tool is required",
+);
 
-export function toSkillKey(skill: Skill): string {
-  return `${skill.name}-${skill.imgPath}`;
-}
+export type Tool = InferOutput<typeof Tool>;
+
+export const Skill = object(
+  {
+    id: string("skill ID is required"),
+    name: string("Skill name is required"),
+  },
+  "Skill is required",
+);
 
 export type Skill = InferOutput<typeof Skill>;
 
-export const Skills = object({
-  title: string(),
-  data: array(Skill),
+export const SkillsAndTools = object({
+  id: string("ID is required"),
+  title: string("Title is required"),
+  tools: array(Tool, "Tools must be an array of Tool objects"),
+  skills: array(Skill, "Skills must be an array of Skill objects"),
 });
 
-export type Skills = InferOutput<typeof Skills>;
+export type SkillsAndTools = InferOutput<typeof SkillsAndTools>;

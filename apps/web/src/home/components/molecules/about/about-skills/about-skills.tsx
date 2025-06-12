@@ -1,86 +1,22 @@
-import { Inline, TabsContent } from "@strapi-portfolio/ui";
-import {
-  filterByTitle,
-  Skills,
-  toSkillKey,
-} from "@strapi-portfolio/web/home/models";
-import { SkillImage, SkillItem } from "../../../atoms";
+import { TabsContent } from "@strapi-portfolio/ui";
+import { type SkillsAndTools } from "@strapi-portfolio/web/home/models";
+import { SkillsInformation } from "./skills";
+import { ToolsInformation } from "./tools-information";
 
-const skillsData: Skills[] = [
-  {
-    title: "skills",
-    data: [
-      {
-        name: "HTML, CSS",
-      },
-      {
-        name: "TypeScript",
-      },
-      {
-        name: "Python, DJango",
-      },
-      {
-        name: "React, Next, Remix",
-      },
-      {
-        name: "MySQL, PostgreSQL",
-      },
-    ],
-  },
-  {
-    title: "tools",
-    data: [
-      {
-        name: "Nvim",
-        imgPath: "/about/vscode.svg",
-      },
-      {
-        name: "Figma",
-        imgPath: "/about/figma.svg",
-      },
-      {
-        name: "Notion",
-        imgPath: "/about/notion.svg",
-      },
-      {
-        name: "WordPress",
-        imgPath: "/about/wordpress.svg",
-      },
-    ],
-  },
-];
+type AboutSkillsProps = {
+  information: SkillsAndTools;
+};
 
-export function AboutSkills() {
+export function AboutSkills({ information }: AboutSkillsProps) {
   return (
     <TabsContent value="skills">
       <div className="wide:text-left text-center">
         <h3 className="h3 wide:text-left mb-8 text-center">
-          Tools I use Every Day
+          {information.title}
         </h3>
-        <div className="mb-16">
-          <h4 className="text-xl font-bold ">Skills</h4>
-          <div className="border-border mb-4 border-b"></div>
-          <div>
-            {filterByTitle<Skills>(skillsData, "skills")?.data.map((item) => (
-              <SkillItem skill={item} key={toSkillKey(item)} />
-            ))}
-          </div>
-        </div>
-        <div>
-          <h4 className="wide:text-left mb-2 text-xl font-semibold">Tools</h4>
-          <div className="border-border mb-4 border-b"></div>
-          <Inline
-            alignX="center"
-            space="4"
-            className="wide:justify-start w-full"
-            wrap
-          >
-            {filterByTitle<Skills>(skillsData, "tools")?.data.map((item) => (
-              <SkillImage skill={item} key={toSkillKey(item)} />
-            ))}
-          </Inline>
-        </div>
+        <SkillsInformation skills={information.skills} />
       </div>
+      <ToolsInformation tools={information.tools} />
     </TabsContent>
   );
 }

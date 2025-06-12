@@ -5,6 +5,7 @@ import {
   getAboutInfo,
   getHeroInformation,
   getQualifications,
+  getSkillsAndTools,
   Hero,
   Reviews,
   Services,
@@ -28,12 +29,15 @@ export default async function Home({ params }: Props) {
     locale,
   });
 
+  const skillsAndTools = await getSkillsAndTools({ locale });
+
   return (
     <main>
       <Hero hero={hero} />
       <About
         devQualifications={devQualifications}
         devInformation={devInformation}
+        skillsAndTools={skillsAndTools}
       />
       <Services />
       <Work />
