@@ -16,7 +16,7 @@ export async function getAboutInfo(
   options: GetAboutInfoOptions,
 ): Promise<AboutMeInformation> {
   const strapi = createStrapiClient();
-  const response = await strapi.home.getAboutMeInfo({
+  const response = await strapi.home.aboutMe.getAboutMeInfo({
     locale: options.locale,
   });
   return getAboutInfoResponseToModel(response, options.locale);

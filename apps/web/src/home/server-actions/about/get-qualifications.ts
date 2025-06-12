@@ -25,7 +25,7 @@ export async function getQualifications({
   experience: ExperienceQualification;
 }> {
   const strapi = createStrapiClient();
-  const response = await strapi.home.getQualifications({
+  const response = await strapi.home.aboutMe.getQualifications({
     locale,
   });
 

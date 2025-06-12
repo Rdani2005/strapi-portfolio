@@ -17,7 +17,7 @@ export async function getHeroInformation(
   options: GetHeroInformationOptions,
 ): Promise<HeroItem> {
   const strapi = createStrapiClient();
-  const response = await strapi.home.getHero({
+  const response = await strapi.home.hero.getHeroInformation({
     locale: options.locale,
     "populate[heroImage][fields][0]": "url",
   });

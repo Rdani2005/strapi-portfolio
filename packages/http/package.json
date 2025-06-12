@@ -1,9 +1,12 @@
 {
   "name": "@strapi-portfolio/http",
-  "version": "1.0.0",
-  "description": "",
   "private": true,
   "sideEffects": false,
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Rdani2005",
+  "license": "MIT",
   "type": "module",
   "main": "src/index.ts",
   "exports": {
@@ -13,10 +16,6 @@
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@strapi-portfolio/core": "workspace:*",
     "valibot": "^1.1.0"
