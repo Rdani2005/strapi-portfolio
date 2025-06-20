@@ -1,7 +1,7 @@
 import { Card } from "@strapi-portfolio/ui";
-import { type Project } from "@strapi-portfolio/web/home/models";
 import { ProjectCardHeader } from "./project-card-header";
 import { ProjectCardContent } from "./project-card-content";
+import { Project } from "@strapi-portfolio/web/projects/models";
 
 type ProjectCardProps = {
   project: Project;

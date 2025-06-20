@@ -3,7 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [new URL("http://localhost:1337")],
+    remotePatterns: [new URL("http://localhost:1337/uploads/**")],
   },
 };
 

@@ -1,51 +1,17 @@
 "use client";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import { Project, projectToKey } from "@strapi-portfolio/web/home/models";
 import { ProjectCard } from "../../atoms";
+import { Project } from "@strapi-portfolio/web/home/models";
 
-const projectsData: Project[] = [
-  {
-    image: "/work/3.png",
-    category: "React",
-    name: "site",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    link: "/",
-    github: "https://github.com",
-  },
-  {
-    image: "/work/4.png",
-    category: "React",
-    name: "site",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    link: "/",
-    github: "https://github.com",
-  },
-  {
-    image: "/work/2.png",
-    category: "React",
-    name: "site",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    link: "/",
-    github: "https://github.com",
-  },
-  {
-    image: "/work/1.png",
-    category: "React",
-    name: "site",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    link: "/",
-    github: "https://github.com",
-  },
-];
+type ProjectSliderProps = {
+  projects: Project[];
+};
 
-export function ProjectsSlider() {
+export function ProjectsSlider({ projects }: ProjectSliderProps) {
   return (
     <div className="wide:max-w-[1000px] wide:absolute right-0 top-0">
       <Swiper
@@ -62,8 +28,8 @@ export function ProjectsSlider() {
           clickable: true,
         }}
       >
-        {projectsData.slice(0, 4).map((project) => (
-          <SwiperSlide key={projectToKey(project)}>
+        {projects.map((project) => (
+          <SwiperSlide key={project.id}>
             <ProjectCard project={project} />
           </SwiperSlide>
         ))}
